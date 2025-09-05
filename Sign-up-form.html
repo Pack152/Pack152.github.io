@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cub scouts form/title>
+  <title>Google Form</title>
   <style>
     :root {
-      --vh: 100%; /* fallback */
+      --vh: 1vh; /* fallback */
     }
 
     body {
@@ -15,7 +15,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: calc(var(--vh, 1vh) * 100); /* real viewport height */
+      height: calc(var(--vh) * 100); /* real viewport height */
       overflow: hidden; /* lock scrolling */
       padding: 0 1rem;
       box-sizing: border-box;
@@ -35,7 +35,7 @@
     .form-wrapper {
       width: 100%;
       max-width: 900px;
-      height: calc(var(--vh, 1vh) * 90); /* 90% of real height */
+      height: calc(var(--vh) * 90); /* 90% of real viewport height */
       background: #ffffff;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
       border-radius: 16px;
@@ -60,6 +60,7 @@
 
   <script>
     function setVh() {
+      // 1vh = 1% of viewport height in px
       document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
     }
     window.addEventListener('resize', setVh);
